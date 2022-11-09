@@ -19,7 +19,7 @@ async function get() {
     const apiResponse = await response.json()
     return await apiResponse
   } catch (err) {
-    console.error('yooo', err)
+    console.error(err)
   }
 }
 

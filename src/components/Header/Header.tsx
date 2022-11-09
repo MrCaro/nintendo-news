@@ -2,8 +2,8 @@ import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import heroImg from '../../img/header-banner.jpg'
-import heroImgGlitch from '../../img/header-banner.gif'
 import nintendoLogo from '../../img/nintendo-main-logo.svg'
+import nintendoCoin from '../../img/coin.webp'
 
 const navigation = [
   { name: 'About', href: '#about' },
@@ -56,9 +56,14 @@ function Header() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="font-medium text-gray-500 hover:text-gray-900 transition-colors ease-in-out delay-75"
+                      className="relative z-10 group font-medium text-gray-500 hover:text-gray-900 transition-colors ease-in-out delay-75"
                     >
                       {item.name}
+                      <img
+                        className="group-hover:opacity-100 group-hover:translate-y-full mt-2 opacity-0 absolute inset-0 transition-all ease-in-out delay-75 duration-200 h-5 w-auto m-auto z-[-1]"
+                        src={nintendoCoin}
+                        alt=""
+                      />
                     </a>
                   ))}
                   <a

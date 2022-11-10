@@ -71,7 +71,6 @@ function Footer() {
           </div>
         </div>
       </div>
-      {/* <div className="footer-bottom py-3 bg-white"></div> */}
       <div className="mx-auto max-w-7xl p-4 sm:px-6 lg:px-8 text-center">
         <div className="flex flex-wrap gap-8 justify-center items-center mt-8 md:order-1 md:mt-0">
           <p className="text-center text-sm text-gray-500">

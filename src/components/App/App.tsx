@@ -1,12 +1,12 @@
-import React from 'react'
-import './App.css'
-import Cards from '../Cards'
-import Features from '../Features'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import About from '../../pages/About'
+import Banner from '../Banner'
 import Footer from '../Footer'
 import Header from '../Header'
-import HeroText from '../HeroText'
-import NintendoSwitch from '../NintendoSwitch'
-import Banner from '../Banner'
+import Home from '../../pages/Home'
+import Navigation from '../Navigation'
+import './App.css'
 
 function App() {
   const headerBanner = {
@@ -18,57 +18,21 @@ function App() {
     },
     closeIcon: 'XMarkIcon',
   }
-  const heroTextAbout = {
-    id: 'about',
-    kicker: 'ABOUT',
-    title: 'We strive for better',
-    description:
-      'Three modes in one – Nintendo Switch is designed to fit your life, transforming from home console to portable system in a snap.',
-  }
-  const aboutFeatures = [
-    {
-      title: 'TV mode',
-      description: 'Dock your system to enjoy HD gaming on your TV.',
-      heroicon: 'TvIcon',
-    },
-    {
-      title: 'Tabletop mode',
-      description:
-        'Flip the stand to share the screen, then share the fun with a multiplayer game.',
-      heroicon: 'DeviceTabletIcon',
-    },
-    {
-      title: 'Handheld mode',
-      description:
-        'Pick it up and play with the Joy-Con™ controllers attached to enjoy the 7-inch OLED screen.',
-      heroicon: 'HandRaisedIcon',
-    },
-  ]
-  const heroTextNews = {
-    id: 'news',
-    kicker: 'NEWS',
-    title: 'Keep up to date',
-    description:
-      'An API showing all the latest Nintendo news from popular news channels.',
-  }
+  const location = useLocation()
 
   return (
-    <div className="">
+    <>
       <Banner {...headerBanner} />
-      <Header />
-      <HeroText {...heroTextAbout} />
-      <div className="relative container mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 z-10">
-        {aboutFeatures.map((feature, i) => (
-          <Features key={`feature-${i}`} {...feature} />
-        ))}
-      </div>
-      <div className="z-1">
-        <NintendoSwitch />
-      </div>
-      <HeroText {...heroTextNews} />
-      <Cards />
+      <Navigation />
+      {/* initial={false} */}
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </AnimatePresence>
       <Footer />
-    </div>
+    </>
   )
 }
 

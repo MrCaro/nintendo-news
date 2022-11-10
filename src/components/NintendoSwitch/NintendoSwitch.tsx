@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import console from '../../img/nintendo-switch-screen-trans.png'
 import controller_right from '../../img/nintendo-switch-controller-right.png'
 import controller_left from '../../img/nintendo-switch-controller-left.png'
-import game from '../../img/mario-game.gif'
+import game from '../../img/link-awakening.png'
 
 gsap.registerPlugin(ScrollTrigger)
 

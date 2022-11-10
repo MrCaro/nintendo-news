@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import nintendoLogo from '../../img/nintendo-footer-logo.svg'
 
 const navigation = {
   company: [
-    { name: 'About', href: '#about' },
-    { name: 'News', href: '#news' },
-    { name: 'Marketplace', href: '#' },
+    { name: 'About', href: '/about' },
+    // { name: 'News', href: '/news' },
+    // { name: 'Marketplace', href: '#' },
   ],
   social: [
     {
@@ -51,13 +52,15 @@ const navigation = {
 function Footer() {
   return (
     <footer className="bg-gray-100">
-      <div className="bg-nintendoRed-600">
+      <div className="bg-nintendoRed-500">
         <div className="flex flex-wrap justify-between items-center mx-auto px-4 container py-8 gap-y-8">
-          <img
-            className="h-8 w-auto md:h-18"
-            src={nintendoLogo}
-            alt="Nintendo Landing Page"
-          />
+          <Link to="/">
+            <img
+              className="h-8 w-auto md:h-18"
+              src={nintendoLogo}
+              alt="Nintendo Landing Page"
+            />
+          </Link>
           <div className="flex items-center gap-8">
             {navigation.company.map((item, i) => (
               <a

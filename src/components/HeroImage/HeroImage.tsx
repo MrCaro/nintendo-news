@@ -16,7 +16,7 @@ export interface Hero {
     cta2: {
       url: string
       title: string
-      primary?: boolean
+      primary: boolean
     }
   ]
   image: {
@@ -41,16 +41,20 @@ const HeroBanner: FC<Hero> = ({ heading, description, ctas }) => {
         <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start gap-3">
           {ctas.map((cta, i) => (
             <div key={`ctaHeroImage-${i}`} className="rounded-md shadow">
-              <Link
-                to={cta.url}
-                className={`flex w-full items-center justify-center rounded-md border-2 px-8 py-3 text-base font-medium md:py-4 md:px-10 md:text-lg transition-colors ease-in-out delay-75 ${
-                  cta.primary
-                    ? 'border-transparent bg-nintendoRed-500 text-white hover:bg-nintendoRed-600'
-                    : 'border-nintendoOrange-500 text-nintendoOrange-500 hover:text-white hover:bg-nintendoOrange-500 mt-3 sm:mt-0'
-                }`}
-              >
-                {cta.title}
-              </Link>
+              {cta.url ? (
+                <Link
+                  to={cta.url}
+                  className={`flex w-full items-center justify-center rounded-md border-2 px-8 py-3 text-base font-medium md:py-4 md:px-10 md:text-lg transition-colors ease-in-out delay-75 ${
+                    cta.primary
+                      ? 'border-transparent bg-nintendoRed-500 text-white hover:bg-nintendoRed-600'
+                      : 'border-nintendoOrange-500 text-nintendoOrange-500 hover:text-white hover:bg-nintendoOrange-500 mt-3 sm:mt-0'
+                  }`}
+                >
+                  {cta.title}
+                </Link>
+              ) : (
+                ''
+              )}
             </div>
           ))}
         </div>

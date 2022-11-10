@@ -8,9 +8,9 @@ import nintendoCoin from '../../img/coin.webp'
 function Navigation() {
   const navigation = [
     { name: 'About', href: '/about' },
-    { name: 'News', href: '#news' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    // { name: 'News', href: '#news' },
+    // { name: 'Marketplace', href: '' },
+    // { name: 'Company', href: '#' },
   ]
 
   return (

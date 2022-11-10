@@ -16,7 +16,7 @@ function Home() {
     ctas: [
       {
         url: '/about',
-        title: 'Get your Switch',
+        title: 'Learn more',
         primary: true,
       },
       {

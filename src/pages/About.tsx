@@ -1,7 +1,7 @@
 import Header from '../components/Header'
 import { Hero } from '../components/HeroImage'
 import HeroFeatured from '../components/HeroFeatured'
-import headerImg from '../img/header-banner-about.jpg'
+import headerImg from '../img/header-banner.jpg'
 import PricingDetails from '../components/PricingDetails'
 
 function About() {

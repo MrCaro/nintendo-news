@@ -76,7 +76,7 @@ function Home() {
         <NintendoSwitch />
       </div>
       <HeroText {...heroTextNews} />
-      <Cards />
+      {/* <Cards /> */}
     </>
   )
 }
